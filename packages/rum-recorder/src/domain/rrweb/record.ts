@@ -1,4 +1,4 @@
-import { MaskInputOptions, SlimDOMOptions, snapshot } from 'rrweb-snapshot'
+import { MaskInputOptions, SlimDOMOptions, snapshot } from '../rrweb-snapshot'
 import { initObservers, mutationBuffer } from './observer'
 import { Event, EventType, EventWithTime, IncrementalSource, ListenerHandler, RecordAPI, RecordOptions } from './types'
 import { getWindowHeight, getWindowWidth, mirror, on, polyfill } from './utils'
