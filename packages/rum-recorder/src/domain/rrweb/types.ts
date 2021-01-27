@@ -1,4 +1,4 @@
-import { idNodeMap, INode, MaskInputOptions, serializedNodeWithId, SlimDOMOptions } from '../rrweb-snapshot'
+import { IdNodeMap, INode, MaskInputOptions, SerializedNodeWithId, SlimDOMOptions } from '../rrweb-snapshot'
 
 export enum EventType {
   DomContentLoaded,
@@ -22,7 +22,7 @@ export interface LoadedEvent {
 export interface FullSnapshotEvent {
   type: EventType.FullSnapshot
   data: {
-    node: serializedNodeWithId
+    node: SerializedNodeWithId
     initialOffset: {
       top: number
       left: number
@@ -260,7 +260,7 @@ export interface AddedNodeMutation {
   // Newly recorded mutations will not have previousId any more, just for compatibility
   previousId?: number | null
   nextId: number | null
-  node: serializedNodeWithId
+  node: SerializedNodeWithId
 }
 
 interface MutationCallbackParam {
@@ -385,7 +385,7 @@ export interface MediaInteractionParam {
 export type MediaInteractionCallback = (p: MediaInteractionParam) => void
 
 export interface Mirror {
-  map: idNodeMap
+  map: IdNodeMap
   getId: (n: INode) => number
   getNode: (id: number) => INode | null
   removeNodeFromMap: (n: INode) => void
